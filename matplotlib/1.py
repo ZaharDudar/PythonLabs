@@ -7,7 +7,7 @@ with open("./dead_moroz/001.dat", 'r') as f:
     for line in f.readlines():
         data += [float(i) for i in line.strip().split()]
 
-data = data[0:N]
+data = data[0:2*N]
 data = np.resize(np.array(data), (len(data)//2,2))
 print(data)
 rangeX = max(data[:,0]) - min(data[:,0])
@@ -17,7 +17,7 @@ Size = 20
 rangeX = rangeX/mRange * Size
 rangeY = rangeY/mRange * Size
 
-plt.figure(figsize=(rangeX, rangeY),dpi=300)
+plt.figure(figsize=(rangeX, rangeY),dpi=150)
 plt.plot(data[:,0],data[:,1],"o")
 
-plt.savefig("./test.png")
+plt.savefig("./1output.png")
