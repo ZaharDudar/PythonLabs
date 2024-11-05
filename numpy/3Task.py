@@ -8,7 +8,7 @@ data = np.array(data)
 fig, ax = plt.subplots()
 A = np.diag([1]*len(data))
 A[:,:-1]-=A[:,1:]
-A[-1,-1]=-1
+A[0,-1]=-1
 p, = ax.plot(data)
 def funk(i):
     global data
